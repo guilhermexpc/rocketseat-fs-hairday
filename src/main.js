@@ -8,6 +8,10 @@ import "./styles/global.css";
 import "./styles/form.css";
 import "./styles/schedule.css";
 
+// Libs
 import dayjs from "dayjs";
+
+// Modules
+import "./modules/form/submit.js";
 
 console.log(dayjs().format("DD/MM/YY HH:mm"));
