@@ -1,11 +1,14 @@
 import dayjs from "dayjs";
 
 import { openingHours } from "../../utils/opening-hours.js";
+import { hoursClick } from "./hours-click.js";
 
 const hours = document.getElementById("hours");
 
 function hoursLoad(date) {
   console.log("hoursLoad", date);
+
+  hours.innerHTML = "";
 
   const opening = openingHours.map((hour) => {
     const [scheduleHour] = hour.split(":");
@@ -26,6 +29,7 @@ function hoursLoad(date) {
 
   console.log(opening);
   renderSchedules(opening);
+  hoursClick();
 }
 
 function renderSchedules(openingHours) {
@@ -37,7 +41,6 @@ function renderSchedules(openingHours) {
 
     listItem.textContent = hour;
 
-    console.log(hour);
     if (hour === "09:00") {
       addHourHeader("Manhã");
     } else if (hour === "13:00") {

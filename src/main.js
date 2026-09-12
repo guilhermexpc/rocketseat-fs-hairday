@@ -13,6 +13,7 @@ import dayjs from "dayjs";
 
 // Modules
 import "./modules/form/submit.js";
+import "./modules/form/date-change.js";
 import "./modules/page-loaded.js";
 import "./modules/schedules/schedules-load.js";
 
