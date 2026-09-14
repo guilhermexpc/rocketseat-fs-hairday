@@ -13,7 +13,7 @@ const periodNight = document.getElementById("period-night");
 
 async function schedulesDay() {
   const date = selectedDate.value;
-  console.log("DATA: ", date);
+  // console.log("DATA: ", date);
 
   const dailySchedules = await scheduleFetchByDay({ date });
   console.log(dailySchedules);
