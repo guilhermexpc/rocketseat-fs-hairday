@@ -5,23 +5,27 @@ import { hoursClick } from "./hours-click.js";
 
 const hours = document.getElementById("hours");
 
-function hoursLoad(date) {
+function hoursLoad(date, dailySchedules) {
   // console.log("hoursLoad", date);
-
+  console.log("dailySchedules", dailySchedules);
   hours.innerHTML = "";
+
+  const unavailableHours = dailySchedules.map((schedule) => dayjs(schedule.when).format("HH:mm"));
+  console.log(unavailableHours);
 
   const opening = openingHours.map((hour) => {
     const [scheduleHour] = hour.split(":");
 
-    const isHourPastBefore = dayjs(date).add(scheduleHour, "hour").isBefore(dayjs());
-    const isHourPastAfter = dayjs(date).add(scheduleHour, "hour").isAfter(dayjs());
+    const isHourPast = dayjs(date).add(scheduleHour, "hour").isBefore(dayjs());
+    // const isHourPastAfter = dayjs(date).add(scheduleHour, "hour").isAfter(dayjs());
     // const isHourPast2 = dayjs(date).add(scheduleHour, "hour").format("DD/MM/YY HH:mm");
     // const isHourPast3 = dayjs(date).format("DD/MM/YY HH:mm");
     // console.log(scheduleHour, isHourPastBefore);
 
+    const available = !unavailableHours.includes(hour) && !isHourPast;
     const availableHour = {
       hour,
-      available: isHourPastAfter
+      available
     };
     // console.log(availableHour);
     return availableHour;

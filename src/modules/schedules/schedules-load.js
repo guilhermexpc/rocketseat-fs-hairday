@@ -19,7 +19,7 @@ async function schedulesDay() {
   console.log(dailySchedules);
 
   schedulesShow({ dailySchedules });
-  hoursLoad(date);
+  hoursLoad(date, dailySchedules);
 }
 
 function schedulesShow({ dailySchedules }) {
