@@ -6,7 +6,7 @@ import { hoursClick } from "./hours-click.js";
 const hours = document.getElementById("hours");
 
 function hoursLoad(date) {
-  console.log("hoursLoad", date);
+  // console.log("hoursLoad", date);
 
   hours.innerHTML = "";
 
@@ -27,7 +27,7 @@ function hoursLoad(date) {
     return availableHour;
   });
 
-  console.log(opening);
+  // console.log(opening);
   renderSchedules(opening);
   hoursClick();
 }

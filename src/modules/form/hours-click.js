@@ -1,6 +1,6 @@
 function hoursClick() {
   const hoursAvailable = document.querySelectorAll(".hour-available");
-  console.log(hoursAvailable);
+  // console.log(hoursAvailable);
 
   hoursAvailable.forEach((avaliable) => {
     avaliable.addEventListener("click", (selected) => {
