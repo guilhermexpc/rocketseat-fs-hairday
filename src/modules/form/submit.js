@@ -1,10 +1,12 @@
 import dayjs from "dayjs";
 
+import { newSchedule } from "../../services/schedule-new.js";
+
 const form = document.querySelector("form");
 const clientName = document.getElementById("client");
 const selectedDate = document.getElementById("date");
 
-form.onsubmit = (event) => {
+form.onsubmit = async (event) => {
   event.preventDefault();
 
   try {
@@ -23,8 +25,9 @@ form.onsubmit = (event) => {
     const [hour] = hourSelected.textContent.split(":");
     const when = dayjs(selectedDate.value).add(hour, "hour");
     const id = new Date().getTime();
+    // const id = crypto.randomUUID();
 
-    console.log({
+    await newSchedule({
       id,
       name,
       when
