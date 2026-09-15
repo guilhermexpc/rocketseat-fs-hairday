@@ -5,7 +5,7 @@ O site permite agendar horários nos periodos da manhã, tarde e noite, em horá
 Possui validação para:
 
 - Mostrar e impedir agendar horários já marcados
-- Impedi agendamento em datas e hora passadas
+- Impedi agendamento em datas e hora passadas.
 
 ![Imagem do projeto](projeto.png)
 
